@@ -1,0 +1,2 @@
+PCA + KNN Accuracy (dim=8): 0.9333
+LDA + KNN Accuracy (dim=8): 0.9333
