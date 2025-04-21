@@ -1,2 +1,88 @@
+PCA + KNN Accuracy (dim=2): 0.4333
+LDA + KNN Accuracy (dim=2): 0.4667
+
+
+PCA + KNN Accuracy (dim=4): 0.7333
+LDA + KNN Accuracy (dim=4): 0.8333
+
+
 PCA + KNN Accuracy (dim=8): 0.9333
 LDA + KNN Accuracy (dim=8): 0.9333
+
+
+PCA + KNN Accuracy (dim=16): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + KNN Accuracy (dim=32): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + KNN Accuracy (dim=64): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + KNN Accuracy (dim=128): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + KNN Accuracy (dim=256): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + KNN Accuracy (dim=512): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + KNN Accuracy (dim=1024): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + KNN Accuracy (dim=2048): 0.9333
+LDA + KNN Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=2): 0.3333
+LDA + SVM Accuracy (dim=2): 0.4667
+
+
+PCA + SVM Accuracy (dim=4): 0.5667
+LDA + SVM Accuracy (dim=4): 0.8333
+
+
+PCA + SVM Accuracy (dim=8): 0.8333
+LDA + SVM Accuracy (dim=8): 0.9000
+
+
+PCA + SVM Accuracy (dim=16): 0.9333
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=32): 0.9333
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=64): 0.9333
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=128): 0.9667
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=256): 0.9667
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=512): 0.9667
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=1024): 0.9667
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
+PCA + SVM Accuracy (dim=2048): 0.9667
+LDA + SVM Accuracy (dim=14): 0.9333
+
+
