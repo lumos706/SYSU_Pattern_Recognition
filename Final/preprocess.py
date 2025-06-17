@@ -10,7 +10,7 @@ from imblearn.over_sampling import SMOTE
 
 # 配置日志
 # 配置日志
-LOG_FILE = 'preprocess.log'
+LOG_FILE = './outputs/preprocess.log'
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -206,7 +206,7 @@ def feature_engineering(df):
 
 
 def encode_categorical(df):
-    """编码分类变量"""
+    """编码分类变量 - 修正版本"""
     _LOG.info("Encoding categorical variables...")
 
     # 定义学业困难标准 (Fail或Withdrawn)
@@ -214,15 +214,26 @@ def encode_categorical(df):
         lambda x: 1 if x in ['Fail', 'Withdrawn'] else 0
     )
 
-    # 标签编码
-    cat_cols = ['gender', 'region', 'highest_education', 'imd_band',
-                'age_band', 'disability', 'semester', 'code_module']
+    # 需要编码的分类列
+    cat_cols = ['gender', 'code_presentation', 'region', 'highest_education', 'imd_band',
+                'age_band', 'disability', 'semester', 'code_module',
+                'final_result']  # 添加了final_result
 
     le_dict = {}
     for col in cat_cols:
-        le = preprocessing.LabelEncoder()
-        df[col] = le.fit_transform(df[col].astype(str))
-        le_dict[col] = le
+        # 检查列是否在DataFrame中
+        if col in df.columns:
+            # 确保值为字符串类型
+            df[col] = df[col].astype(str)
+            le = preprocessing.LabelEncoder()
+            df[col] = le.fit_transform(df[col])
+            le_dict[col] = le
+
+            # 输出类别映射到日志
+            mapping = {category: index for index, category in enumerate(le.classes_)}
+            _LOG.info(f"Column '{col}' encoding mapping: {mapping}")
+        else:
+            _LOG.warning(f"列 {col} 不存在于DataFrame中，跳过编码")
 
     return df, le_dict
 

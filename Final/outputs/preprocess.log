@@ -1,0 +1,29 @@
+2025-06-17 17:06:02,873 - __main__ - INFO - Loaded assessments: (206, 6)
+2025-06-17 17:06:02,876 - __main__ - INFO - Loaded courses: (22, 3)
+2025-06-17 17:06:02,943 - __main__ - INFO - Loaded studentAssessment: (173912, 5)
+2025-06-17 17:06:02,989 - __main__ - INFO - Loaded studentInfo: (32593, 12)
+2025-06-17 17:06:03,005 - __main__ - INFO - Loaded studentRegistration: (32593, 5)
+2025-06-17 17:06:09,064 - __main__ - INFO - Loaded studentVLE: (10655280, 6)
+2025-06-17 17:06:09,075 - __main__ - INFO - Loaded vle: (6364, 6)
+2025-06-17 17:06:09,116 - __main__ - INFO - Handling missing data...
+2025-06-17 17:06:09,170 - __main__ - INFO - Missing values reduced from 23677 to 0
+2025-06-17 17:06:09,170 - __main__ - INFO - Processing VLE data...
+2025-06-17 17:06:15,871 - __main__ - INFO - Handling outliers...
+2025-06-17 17:06:28,005 - __main__ - INFO - Performing feature engineering...
+2025-06-17 17:06:28,059 - __main__ - INFO - Encoding categorical variables...
+2025-06-17 17:06:28,076 - __main__ - INFO - Column 'gender' encoding mapping: {'F': 0, 'M': 1}
+2025-06-17 17:06:28,081 - __main__ - INFO - Column 'code_presentation' encoding mapping: {'2013B': 0, '2013J': 1, '2014B': 2, '2014J': 3}
+2025-06-17 17:06:28,086 - __main__ - INFO - Column 'region' encoding mapping: {'East Anglian Region': 0, 'East Midlands Region': 1, 'Ireland': 2, 'London Region': 3, 'North Region': 4, 'North Western Region': 5, 'Scotland': 6, 'South East Region': 7, 'South Region': 8, 'South West Region': 9, 'Wales': 10, 'West Midlands Region': 11, 'Yorkshire Region': 12}
+2025-06-17 17:06:28,091 - __main__ - INFO - Column 'highest_education' encoding mapping: {'A Level or Equivalent': 0, 'HE Qualification': 1, 'Lower Than A Level': 2, 'No Formal quals': 3, 'Post Graduate Qualification': 4}
+2025-06-17 17:06:28,097 - __main__ - INFO - Column 'imd_band' encoding mapping: {'0-10%': 0, '10-20': 1, '20-30%': 2, '30-40%': 3, '40-50%': 4, '50-60%': 5, '60-70%': 6, '70-80%': 7, '80-90%': 8, '90-100%': 9}
+2025-06-17 17:06:28,102 - __main__ - INFO - Column 'age_band' encoding mapping: {'0-35': 0, '35-55': 1, '55<=': 2}
+2025-06-17 17:06:28,107 - __main__ - INFO - Column 'disability' encoding mapping: {'N': 0, 'Y': 1}
+2025-06-17 17:06:28,116 - __main__ - INFO - Column 'semester' encoding mapping: {'nan': 0}
+2025-06-17 17:06:28,121 - __main__ - INFO - Column 'code_module' encoding mapping: {'AAA': 0, 'BBB': 1, 'CCC': 2, 'DDD': 3, 'EEE': 4, 'FFF': 5, 'GGG': 6}
+2025-06-17 17:06:28,128 - __main__ - INFO - Column 'final_result' encoding mapping: {'Distinction': 0, 'Fail': 1, 'Pass': 2, 'Withdrawn': 3}
+2025-06-17 17:06:28,978 - __main__ - INFO - Final dataset shape: (31482, 62)
+2025-06-17 17:06:29,815 - __main__ - INFO - After SMOTE - Train shape: (26922, 58), Class distribution: [13461 13461]
+2025-06-17 17:06:30,180 - __main__ - INFO - Training set size: (26922, 58)
+2025-06-17 17:06:30,181 - __main__ - INFO - Testing set size: (6297, 58)
+2025-06-17 17:06:30,181 - __main__ - INFO - Risk ratio in train: 0.50
+2025-06-17 17:06:30,181 - __main__ - INFO - Risk ratio in test: 0.53

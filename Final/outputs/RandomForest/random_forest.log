@@ -1,0 +1,79 @@
+2025-06-17 17:53:43,304 - root - INFO - ===== 学业困难学生识别 - 随机森林算法 (SHAP修复版) =====
+2025-06-17 17:53:43,304 - root - INFO - 加载预处理数据...
+2025-06-17 17:53:43,661 - root - INFO - 数据加载成功，形状: (31482, 62)
+2025-06-17 17:53:43,662 - root - INFO - 检查并转换分类变量...
+2025-06-17 17:53:43,666 - root - INFO - 准备特征和目标变量...
+2025-06-17 17:53:43,681 - root - INFO - 学业困难学生比例: 53.45% (16827/31482)
+2025-06-17 17:53:43,681 - root - INFO - 划分训练集和测试集 (80:20)...
+2025-06-17 17:53:43,728 - root - INFO - 训练集: 25185 样本
+2025-06-17 17:53:43,728 - root - INFO - 测试集: 6297 样本
+2025-06-17 17:53:43,729 - root - INFO - 标准化特征数据...
+2025-06-17 17:53:43,852 - root - INFO - 初始化随机森林分类器...
+2025-06-17 17:53:43,853 - root - INFO - 开始训练随机森林模型...
+2025-06-17 17:53:46,493 - root - INFO - 训练完成，耗时: 2.64秒
+2025-06-17 17:53:46,589 - root - INFO - 模型已保存至: ../outputs/RandomForest/academic_risk_rf_model.pkl
+2025-06-17 17:53:46,589 - root - INFO - 评估模型性能...
+2025-06-17 17:53:46,938 - root - INFO - 评估完成，耗时: 0.35秒
+2025-06-17 17:53:46,938 - root - INFO - 
+==================== 模型性能指标 ====================
+2025-06-17 17:53:46,938 - root - INFO - 准确率 (Accuracy): 0.9536
+2025-06-17 17:53:46,938 - root - INFO - 精确率 (Precision): 0.9889
+2025-06-17 17:53:46,938 - root - INFO - 召回率 (Recall): 0.9236
+2025-06-17 17:53:46,938 - root - INFO - F1分数 (F1-Score): 0.9551
+2025-06-17 17:53:46,938 - root - INFO - ROC AUC分数: 0.9966
+2025-06-17 17:53:46,938 - root - INFO - 
+==================== 混淆矩阵 ====================
+2025-06-17 17:53:46,938 - root - INFO - 
+[[2896   35]
+ [ 257 3109]]
+2025-06-17 17:53:46,938 - root - INFO - 
+==================== 分类报告 ====================
+2025-06-17 17:53:46,938 - root - INFO - 
+              precision    recall  f1-score   support
+
+        正常学生       0.92      0.99      0.95      2931
+      学业困难学生       0.99      0.92      0.96      3366
+
+    accuracy                           0.95      6297
+   macro avg       0.95      0.96      0.95      6297
+weighted avg       0.96      0.95      0.95      6297
+
+2025-06-17 17:53:46,939 - root - INFO - 使用SHAP进行特征解释分析...
+2025-06-17 17:53:46,939 - root - INFO - 初始化SHAP解释器...
+2025-06-17 17:53:46,981 - root - INFO - 计算 1000 个样本的SHAP值...
+2025-06-17 17:54:53,578 - root - INFO - SHAP值形状: (1000, 61, 2)
+2025-06-17 17:54:53,578 - root - INFO - 数据形状: (1000, 61)
+2025-06-17 17:54:53,578 - root - INFO - 使用正类SHAP值，新形状: (1000, 61)
+2025-06-17 17:54:56,222 - root - INFO - 
+==================== SHAP特征分析结果 ====================
+2025-06-17 17:54:56,222 - root - INFO - SHAP摘要图已保存至: ../outputs/RandomForest/shap_results\shap_summary.png
+2025-06-17 17:54:56,222 - root - INFO - SHAP条形图已保存至: ../outputs/RandomForest/shap_results\shap_bar.png
+2025-06-17 17:54:56,222 - root - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_final_result.png
+2025-06-17 17:54:56,222 - root - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_date_unregistration.png
+2025-06-17 17:54:56,222 - root - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_active_days_homepage.png
+2025-06-17 17:54:56,222 - root - INFO - 
+Top 10 重要特征 (基于SHAP值):
+2025-06-17 17:54:56,226 - root - INFO -                  Feature  Mean |SHAP|
+11          final_result     0.157182
+13   date_unregistration     0.057809
+21  active_days_homepage     0.042520
+58   overall_active_days     0.032062
+60      early_engagement     0.027198
+49     total_clicks_quiz     0.023407
+57  overall_total_clicks     0.016557
+29      active_days_quiz     0.014643
+31  active_days_resource     0.014556
+0            code_module     0.010987
+2025-06-17 17:54:56,226 - root - INFO - 
+重要特征解释:
+2025-06-17 17:54:56,227 - root - INFO - - final_result: 最终课程通过情况，Fail或Withdrawn很大程度上表示学业困难
+2025-06-17 17:54:56,227 - root - INFO - - date_unregistration: 课程退课日期，可能与学业困难相关
+2025-06-17 17:54:56,227 - root - INFO - - active_days_homepage: 访问课程主页的天数，反映基本参与程度
+2025-06-17 17:54:56,227 - root - INFO - - overall_active_days: 学生与学习平台互动的总天数，高值表示更活跃的学生
+2025-06-17 17:54:56,227 - root - INFO - - early_engagement: 课程前4周的平均参与度，是早期预警的关键指标
+2025-06-17 17:54:56,227 - root - INFO - 
+===== 随机森林模型总结 =====
+2025-06-17 17:54:56,227 - root - INFO - 学业困难学生识别率 (召回率): 92.36%
+2025-06-17 17:54:56,227 - root - INFO - 模型准确率: 95.36%
+2025-06-17 17:54:56,227 - root - INFO - F1分数: 0.9551
+2025-06-17 17:54:56,227 - root - INFO - 学业困难学生识别任务完成!
