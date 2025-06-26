@@ -23,7 +23,7 @@ font = {'family': 'MicroSoft YaHei',
 
 
 # 配置日志系统
-def setup_logger(log_file='../outputs/RandomForest/random_forest.log'):
+def setup_logger(log_file='../Outputs/RandomForest/random_forest.log'):
     """配置同时输出到文件和终端的日志系统"""
     logger = logging.getLogger('RandomForest')
     logger.setLevel(logging.INFO)
@@ -105,7 +105,7 @@ def evaluate_model(model, X_test, y_test, logger):
 
 
 # SHAP特征解释分析 - 修复版本
-def analyze_with_shap(model, X_train, feature_names, logger, output_dir='../outputs/RandomForest/shap_results'):
+def analyze_with_shap(model, X_train, feature_names, logger, output_dir='../Outputs/RandomForest/shap_results'):
     """使用SHAP进行特征解释分析 - 修复形状问题"""
     # 创建输出目录
     os.makedirs(output_dir, exist_ok=True)

@@ -238,7 +238,7 @@ def encode_categorical(df):
     return df, le_dict
 
 
-def preprocess_pipeline(output_base='outputs'):
+def preprocess_pipeline(output_base='Outputs'):
     """完整预处理流程"""
     # 创建输出目录
     os.makedirs(output_base, exist_ok=True)
