@@ -12,7 +12,10 @@ import matplotlib.pyplot as plt
 import shap
 import joblib
 import os
+import warnings
 
+# 忽略警告
+warnings.filterwarnings("ignore")
 font = {'family': 'MicroSoft YaHei',
         'weight': 'bold',
         'size': 'larger'}
@@ -22,7 +25,7 @@ font = {'family': 'MicroSoft YaHei',
 # 配置日志系统
 def setup_logger(log_file='../outputs/RandomForest/random_forest.log'):
     """配置同时输出到文件和终端的日志系统"""
-    logger = logging.getLogger()
+    logger = logging.getLogger('RandomForest')
     logger.setLevel(logging.INFO)
 
     # File handler
@@ -141,6 +144,7 @@ def analyze_with_shap(model, X_train, feature_names, logger, output_dir='../outp
     # 1. SHAP摘要图 - 显示整体特征重要性
     plt.figure(figsize=(12, 8))
     shap.summary_plot(shap_values_pos, X_sample, show=False)
+    plt.title("随机森林 - SHAP特征重要性摘要", fontsize=14)
     plt.tight_layout()
     summary_path = os.path.join(output_dir, 'shap_summary.png')
     plt.savefig(summary_path, bbox_inches='tight')
@@ -149,6 +153,7 @@ def analyze_with_shap(model, X_train, feature_names, logger, output_dir='../outp
     # 2. SHAP条形图 - 特征重要性排序
     plt.figure(figsize=(12, 8))
     shap.summary_plot(shap_values_pos, X_sample, plot_type="bar", show=False)
+    plt.title("随机森林 - SHAP特征重要性排序", fontsize=14)
     plt.tight_layout()
     bar_path = os.path.join(output_dir, 'shap_bar.png')
     plt.savefig(bar_path, bbox_inches='tight')

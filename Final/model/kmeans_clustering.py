@@ -13,7 +13,10 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import joblib
 import os
+import warnings
 
+# 忽略警告
+warnings.filterwarnings("ignore")
 # 设置全局字体
 plt.rc("font", family='Microsoft YaHei', weight="bold")
 

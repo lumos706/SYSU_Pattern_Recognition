@@ -1,34 +1,34 @@
-2025-06-19 00:26:59,176 - root - INFO - ===== 学业困难学生识别 - 随机森林算法 (SHAP修复版) =====
-2025-06-19 00:26:59,176 - root - INFO - 加载预处理数据...
-2025-06-19 00:26:59,307 - root - INFO - 数据加载成功，形状: (31482, 62)
-2025-06-19 00:26:59,307 - root - INFO - 检查并转换分类变量...
-2025-06-19 00:26:59,308 - root - INFO - 准备特征和目标变量...
-2025-06-19 00:26:59,313 - root - INFO - 学业困难学生比例: 53.45% (16827/31482)
-2025-06-19 00:26:59,313 - root - INFO - 划分训练集和测试集 (80:20)...
-2025-06-19 00:26:59,348 - root - INFO - 训练集: 25185 样本
-2025-06-19 00:26:59,348 - root - INFO - 测试集: 6297 样本
-2025-06-19 00:26:59,348 - root - INFO - 标准化特征数据...
-2025-06-19 00:26:59,380 - root - INFO - 初始化随机森林分类器...
-2025-06-19 00:26:59,381 - root - INFO - 开始训练随机森林模型...
-2025-06-19 00:27:00,353 - root - INFO - 训练完成，耗时: 0.97秒
-2025-06-19 00:27:00,421 - root - INFO - 模型已保存至: ../outputs/RandomForest/academic_risk_rf_model.pkl
-2025-06-19 00:27:00,421 - root - INFO - 评估模型性能...
-2025-06-19 00:27:00,576 - root - INFO - 评估完成，耗时: 0.16秒
-2025-06-19 00:27:00,576 - root - INFO - 
+2025-06-26 19:31:03,623 - RandomForest - INFO - ===== 学业困难学生识别 - 随机森林算法 (SHAP修复版) =====
+2025-06-26 19:31:03,623 - RandomForest - INFO - 加载预处理数据...
+2025-06-26 19:31:04,284 - RandomForest - INFO - 数据加载成功，形状: (31482, 62)
+2025-06-26 19:31:04,284 - RandomForest - INFO - 检查并转换分类变量...
+2025-06-26 19:31:04,285 - RandomForest - INFO - 准备特征和目标变量...
+2025-06-26 19:31:04,301 - RandomForest - INFO - 学业困难学生比例: 53.45% (16827/31482)
+2025-06-26 19:31:04,302 - RandomForest - INFO - 划分训练集和测试集 (80:20)...
+2025-06-26 19:31:04,358 - RandomForest - INFO - 训练集: 25185 样本
+2025-06-26 19:31:04,358 - RandomForest - INFO - 测试集: 6297 样本
+2025-06-26 19:31:04,358 - RandomForest - INFO - 标准化特征数据...
+2025-06-26 19:31:04,494 - RandomForest - INFO - 初始化随机森林分类器...
+2025-06-26 19:31:04,495 - RandomForest - INFO - 开始训练随机森林模型...
+2025-06-26 19:31:08,274 - RandomForest - INFO - 训练完成，耗时: 3.78秒
+2025-06-26 19:31:08,651 - RandomForest - INFO - 模型已保存至: ../outputs/RandomForest/academic_risk_rf_model.pkl
+2025-06-26 19:31:08,652 - RandomForest - INFO - 评估模型性能...
+2025-06-26 19:31:10,501 - RandomForest - INFO - 评估完成，耗时: 1.85秒
+2025-06-26 19:31:10,502 - RandomForest - INFO - 
 ==================== 模型性能指标 ====================
-2025-06-19 00:27:00,576 - root - INFO - 准确率 (Accuracy): 0.9536
-2025-06-19 00:27:00,576 - root - INFO - 精确率 (Precision): 0.9889
-2025-06-19 00:27:00,576 - root - INFO - 召回率 (Recall): 0.9236
-2025-06-19 00:27:00,576 - root - INFO - F1分数 (F1-Score): 0.9551
-2025-06-19 00:27:00,576 - root - INFO - ROC AUC分数: 0.9966
-2025-06-19 00:27:00,576 - root - INFO - 
+2025-06-26 19:31:10,502 - RandomForest - INFO - 准确率 (Accuracy): 0.9536
+2025-06-26 19:31:10,502 - RandomForest - INFO - 精确率 (Precision): 0.9889
+2025-06-26 19:31:10,503 - RandomForest - INFO - 召回率 (Recall): 0.9236
+2025-06-26 19:31:10,503 - RandomForest - INFO - F1分数 (F1-Score): 0.9551
+2025-06-26 19:31:10,503 - RandomForest - INFO - ROC AUC分数: 0.9966
+2025-06-26 19:31:10,503 - RandomForest - INFO - 
 ==================== 混淆矩阵 ====================
-2025-06-19 00:27:00,578 - root - INFO - 
+2025-06-26 19:31:10,504 - RandomForest - INFO - 
 [[2896   35]
  [ 257 3109]]
-2025-06-19 00:27:00,578 - root - INFO - 
+2025-06-26 19:31:10,504 - RandomForest - INFO - 
 ==================== 分类报告 ====================
-2025-06-19 00:27:00,578 - root - INFO - 
+2025-06-26 19:31:10,504 - RandomForest - INFO - 
               precision    recall  f1-score   support
 
         正常学生       0.92      0.99      0.95      2931
@@ -38,23 +38,23 @@
    macro avg       0.95      0.96      0.95      6297
 weighted avg       0.96      0.95      0.95      6297
 
-2025-06-19 00:27:00,584 - root - INFO - 评估指标已保存至: ../outputs/RandomForest\metrics.csv
-2025-06-19 00:27:00,585 - root - INFO - 使用SHAP进行特征解释分析...
-2025-06-19 00:27:00,586 - root - INFO - 初始化SHAP解释器...
-2025-06-19 00:27:00,621 - root - INFO - 计算 1000 个样本的SHAP值...
-2025-06-19 00:27:49,798 - root - INFO - SHAP值形状: (1000, 61, 2)
-2025-06-19 00:27:49,798 - root - INFO - 数据形状: (1000, 61)
-2025-06-19 00:27:49,798 - root - INFO - 使用正类SHAP值，新形状: (1000, 61)
-2025-06-19 00:27:52,076 - root - INFO - 
+2025-06-26 19:31:10,546 - RandomForest - INFO - 评估指标已保存至: ../outputs/RandomForest\metrics.csv
+2025-06-26 19:31:10,546 - RandomForest - INFO - 使用SHAP进行特征解释分析...
+2025-06-26 19:31:10,547 - RandomForest - INFO - 初始化SHAP解释器...
+2025-06-26 19:31:10,677 - RandomForest - INFO - 计算 1000 个样本的SHAP值...
+2025-06-26 19:32:46,459 - RandomForest - INFO - SHAP值形状: (1000, 61, 2)
+2025-06-26 19:32:46,459 - RandomForest - INFO - 数据形状: (1000, 61)
+2025-06-26 19:32:46,459 - RandomForest - INFO - 使用正类SHAP值，新形状: (1000, 61)
+2025-06-26 19:32:49,227 - RandomForest - INFO - 
 ==================== SHAP特征分析结果 ====================
-2025-06-19 00:27:52,077 - root - INFO - SHAP摘要图已保存至: ../outputs/RandomForest/shap_results\shap_summary.png
-2025-06-19 00:27:52,077 - root - INFO - SHAP条形图已保存至: ../outputs/RandomForest/shap_results\shap_bar.png
-2025-06-19 00:27:52,077 - root - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_final_result.png
-2025-06-19 00:27:52,077 - root - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_date_unregistration.png
-2025-06-19 00:27:52,077 - root - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_active_days_homepage.png
-2025-06-19 00:27:52,077 - root - INFO - 
+2025-06-26 19:32:49,227 - RandomForest - INFO - SHAP摘要图已保存至: ../outputs/RandomForest/shap_results\shap_summary.png
+2025-06-26 19:32:49,227 - RandomForest - INFO - SHAP条形图已保存至: ../outputs/RandomForest/shap_results\shap_bar.png
+2025-06-26 19:32:49,227 - RandomForest - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_final_result.png
+2025-06-26 19:32:49,227 - RandomForest - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_date_unregistration.png
+2025-06-26 19:32:49,227 - RandomForest - INFO - SHAP依赖图已保存至: ../outputs/RandomForest/shap_results\shap_dependence_active_days_homepage.png
+2025-06-26 19:32:49,227 - RandomForest - INFO - 
 Top 10 重要特征 (基于SHAP值):
-2025-06-19 00:27:52,081 - root - INFO -                  Feature  Mean |SHAP|
+2025-06-26 19:32:49,231 - RandomForest - INFO -                  Feature  Mean |SHAP|
 11          final_result     0.157182
 13   date_unregistration     0.057809
 21  active_days_homepage     0.042520
@@ -65,17 +65,17 @@ Top 10 重要特征 (基于SHAP值):
 29      active_days_quiz     0.014643
 31  active_days_resource     0.014556
 0            code_module     0.010987
-2025-06-19 00:27:52,082 - root - INFO - 
+2025-06-26 19:32:49,232 - RandomForest - INFO - 
 重要特征解释:
-2025-06-19 00:27:52,082 - root - INFO - - final_result: 最终课程通过情况，Fail或Withdrawn很大程度上表示学业困难
-2025-06-19 00:27:52,082 - root - INFO - - date_unregistration: 课程退课日期，可能与学业困难相关
-2025-06-19 00:27:52,082 - root - INFO - - active_days_homepage: 访问课程主页的天数，反映基本参与程度
-2025-06-19 00:27:52,082 - root - INFO - - overall_active_days: 学生与学习平台互动的总天数，高值表示更活跃的学生
-2025-06-19 00:27:52,082 - root - INFO - - early_engagement: 课程前4周的平均参与度，是早期预警的关键指标
-2025-06-19 00:27:52,082 - root - INFO - 
+2025-06-26 19:32:49,232 - RandomForest - INFO - - final_result: 最终课程通过情况，Fail或Withdrawn很大程度上表示学业困难
+2025-06-26 19:32:49,232 - RandomForest - INFO - - date_unregistration: 课程退课日期，可能与学业困难相关
+2025-06-26 19:32:49,232 - RandomForest - INFO - - active_days_homepage: 访问课程主页的天数，反映基本参与程度
+2025-06-26 19:32:49,232 - RandomForest - INFO - - overall_active_days: 学生与学习平台互动的总天数，高值表示更活跃的学生
+2025-06-26 19:32:49,232 - RandomForest - INFO - - early_engagement: 课程前4周的平均参与度，是早期预警的关键指标
+2025-06-26 19:32:49,232 - RandomForest - INFO - 
 ===== 随机森林模型总结 =====
-2025-06-19 00:27:52,083 - root - INFO - 学业困难学生识别率 (召回率): 92.36%
-2025-06-19 00:27:52,083 - root - INFO - 模型准确率: 95.36%
-2025-06-19 00:27:52,083 - root - INFO - F1分数: 0.9551
-2025-06-19 00:27:52,083 - root - INFO - ROC AUC: 0.9966
-2025-06-19 00:27:52,083 - root - INFO - 学业困难学生识别任务完成!
+2025-06-26 19:32:49,232 - RandomForest - INFO - 学业困难学生识别率 (召回率): 92.36%
+2025-06-26 19:32:49,232 - RandomForest - INFO - 模型准确率: 95.36%
+2025-06-26 19:32:49,232 - RandomForest - INFO - F1分数: 0.9551
+2025-06-26 19:32:49,232 - RandomForest - INFO - ROC AUC: 0.9966
+2025-06-26 19:32:49,232 - RandomForest - INFO - 学业困难学生识别任务完成!
