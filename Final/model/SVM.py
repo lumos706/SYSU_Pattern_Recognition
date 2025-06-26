@@ -158,29 +158,34 @@ def analyze_with_shap(model, X_train, feature_names, logger, output_dir):
     # 确保X_train是DataFrame格式
     if not isinstance(X_train, pd.DataFrame):
         X_train_df = pd.DataFrame(X_train, columns=feature_names)
+        print("X_train转换为DataFrame格式")
     else:
-        X_train_df = pd.DataFrame(X_train, columns=feature_names)  # 确保是DataFrame
+        X_train_df = X_train  # 如果X_train已经是DataFrame，直接使用
 
     # 采样以加快计算
-    sample_size = min(300, X_train_df.shape[0])
-    X_sample = X_train_df.sample(sample_size, random_state=42)
+    X_background = shap.sample(X_train_df, 20, random_state=42)
 
     # 初始化SHAP解释器
     logger.info("初始化SHAP解释器...")
-    explainer = shap.KernelExplainer(model.predict_proba, X_sample)
+    explainer = shap.KernelExplainer(model.predict_proba, X_background)
 
     # 计算SHAP值
-    logger.info(f"计算 {sample_size} 个样本的SHAP值...")
+    logger.info(f"计算SHAP值...")
     try:
-        shap_values = explainer.shap_values(X_sample)
-
+        shap_values = explainer.shap_values(X_background)
+        # 检查SHAP值的形状
+        logger.info(f"SHAP值形状: {shap_values.shape}")
+        logger.info(f"数据集形状: {X_background.shape}")
         # 处理SHAP值形状
         if isinstance(shap_values, list) and len(shap_values) == 2:
             shap_values = shap_values[1]  # 取正类的SHAP值
-
+            logger.info(f"使用完整SHAP值形状: {shap_values.shape}")
+        elif len(shap_values.shape) == 3:
+            shap_values = shap_values[:, :, 1]  # 取正类的SHAP值
+            logger.info(f"使用正类SHAP值形状: {shap_values.shape}")
         # 1. SHAP摘要图
         plt.figure(figsize=(12, 8))
-        shap.summary_plot(shap_values, X_sample, show=False)
+        shap.summary_plot(shap_values, X_background, show=False)
         plt.title("SVM - SHAP特征重要性摘要", fontsize=14)
         plt.tight_layout()
         summary_path = os.path.join(shap_dir, 'shap_summary.png')
@@ -189,7 +194,7 @@ def analyze_with_shap(model, X_train, feature_names, logger, output_dir):
 
         # 2. SHAP条形图
         plt.figure(figsize=(12, 8))
-        shap.summary_plot(shap_values, X_sample, plot_type="bar", show=False)
+        shap.summary_plot(shap_values, X_background, plot_type="bar", show=False)
         plt.title("SVM - SHAP特征重要性排序", fontsize=14)
         plt.tight_layout()
         bar_path = os.path.join(shap_dir, 'shap_bar.png')

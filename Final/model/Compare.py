@@ -66,7 +66,8 @@ def compare_models():
     models = {
         "RandomForest": "随机森林",
         "LogisticRegression": "逻辑回归",
-        "kMeans": "K-Means"
+        "KMeans": "K-Means",
+        "SVM": "支持向量机"
     }
 
     # 存储所有模型的性能指标
@@ -150,7 +151,7 @@ def compare_models():
         metric_df = comparison_df[comparison_df['Metric'] == metric]
 
         # 按模型名称排序以保持一致性
-        model_order = ["随机森林", "逻辑回归","K-Means"]
+        model_order = ["随机森林", "逻辑回归", "K-Means", "支持向量机"]
         metric_df['Model'] = pd.Categorical(metric_df['Model'], categories=model_order, ordered=True)
         metric_df = metric_df.sort_values('Model')
 
