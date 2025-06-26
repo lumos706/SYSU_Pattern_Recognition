@@ -10,7 +10,7 @@ from imblearn.over_sampling import SMOTE
 
 # 配置日志
 # 配置日志
-LOG_FILE = './outputs/preprocess.log'
+LOG_FILE = './outputs/preprocess/preprocess.log'
 logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
@@ -242,7 +242,7 @@ def preprocess_pipeline(output_base='outputs'):
     """完整预处理流程"""
     # 创建输出目录
     os.makedirs(output_base, exist_ok=True)
-    plot_dir = os.path.join(output_base, 'preprocess_plots', 'cleaning')
+    plot_dir = os.path.join(output_base, 'preprocess', 'cleaning')
 
     # 1. 加载数据
     merged_df, data_dict = load_and_merge_data()
