@@ -242,7 +242,7 @@ def preprocess_pipeline(output_base='Outputs'):
     """完整预处理流程"""
     # 创建输出目录
     os.makedirs(output_base, exist_ok=True)
-    plot_dir = os.path.join(output_base, 'preprocess', 'cleaning')
+    plot_dir = os.path.join(output_base, 'Preprocess', 'cleaning')
 
     # 1. 加载数据
     merged_df, data_dict = load_and_merge_data()

@@ -55,11 +55,11 @@ def compare_models():
     4. 创建详细性能对比报告
     """
     # 设置日志
-    logger = setup_logger('../outputs/comparison/model_comparison.log')
+    logger = setup_logger('../outputs/Comparison/model_comparison.log')
     logger.info("===== 开始模型性能对比分析 =====")
 
     # 确保输出目录存在
-    output_dir = '../outputs/comparison'
+    output_dir = '../outputs/Comparison'
     os.makedirs(output_dir, exist_ok=True)
 
     # 模型列表和对应的显示名称
@@ -102,7 +102,7 @@ def compare_models():
     logger.info(f"模型对比数据已保存至: {comparison_csv_path}")
 
     # 创建可视化图表目录
-    plots_dir = os.path.join(output_dir, 'comparison_plots')
+    plots_dir = os.path.join(output_dir, 'Comparison_plots')
     os.makedirs(plots_dir, exist_ok=True)
 
     # 1. 综合性能对比图
