@@ -1,0 +1,68 @@
+2025-06-18 23:58:54,404 - LogisticRegression - INFO - ===== 学业困难学生识别 - 逻辑回归模型 =====
+2025-06-18 23:58:54,404 - LogisticRegression - INFO - 加载预处理数据...
+2025-06-18 23:58:54,557 - LogisticRegression - INFO - 数据加载成功，形状: (31482, 62)
+2025-06-18 23:58:54,557 - LogisticRegression - INFO - 准备特征和目标变量...
+2025-06-18 23:58:54,562 - LogisticRegression - INFO - 学业困难学生比例: 53.45% (16827/31482)
+2025-06-18 23:58:54,562 - LogisticRegression - INFO - 划分训练集和测试集 (80:20)...
+2025-06-18 23:58:54,585 - LogisticRegression - INFO - 训练集: 25185 样本
+2025-06-18 23:58:54,586 - LogisticRegression - INFO - 测试集: 6297 样本
+2025-06-18 23:58:54,590 - LogisticRegression - INFO - 创建预处理和建模管道...
+2025-06-18 23:58:54,590 - LogisticRegression - INFO - 开始网格搜索优化超参数...
+2025-06-18 23:59:18,112 - LogisticRegression - INFO - 网格搜索完成!
+2025-06-18 23:59:18,112 - LogisticRegression - INFO - 最佳参数: {'classifier__C': 100, 'classifier__penalty': 'l1', 'classifier__solver': 'liblinear'}
+2025-06-18 23:59:18,112 - LogisticRegression - INFO - 最佳交叉验证F1分数: 0.8891
+2025-06-18 23:59:18,116 - LogisticRegression - INFO - 模型已保存至: ../outputs/LogisticRegression\logistic_regression_model.pkl
+2025-06-18 23:59:18,116 - LogisticRegression - INFO - 评估模型性能...
+2025-06-18 23:59:18,605 - LogisticRegression - INFO - 评估完成，耗时: 0.49秒
+2025-06-18 23:59:18,605 - LogisticRegression - INFO - 
+==================== 模型性能指标 ====================
+2025-06-18 23:59:18,605 - LogisticRegression - INFO - 准确率 (Accuracy): 0.8869
+2025-06-18 23:59:18,605 - LogisticRegression - INFO - 精确率 (Precision): 0.8987
+2025-06-18 23:59:18,605 - LogisticRegression - INFO - 召回率 (Recall): 0.8886
+2025-06-18 23:59:18,605 - LogisticRegression - INFO - F1分数 (F1-Score): 0.8936
+2025-06-18 23:59:18,606 - LogisticRegression - INFO - ROC AUC分数: 0.9517
+2025-06-18 23:59:18,606 - LogisticRegression - INFO - 
+==================== 混淆矩阵 ====================
+2025-06-18 23:59:18,606 - LogisticRegression - INFO - 
+[[2594  337]
+ [ 375 2991]]
+2025-06-18 23:59:18,606 - LogisticRegression - INFO - 
+==================== 分类报告 ====================
+2025-06-18 23:59:18,606 - LogisticRegression - INFO - 
+              precision    recall  f1-score   support
+
+        正常学生       0.87      0.89      0.88      2931
+      学业困难学生       0.90      0.89      0.89      3366
+
+    accuracy                           0.89      6297
+   macro avg       0.89      0.89      0.89      6297
+weighted avg       0.89      0.89      0.89      6297
+
+2025-06-18 23:59:18,611 - LogisticRegression - INFO - 评估指标已保存至: ../outputs/LogisticRegression\metrics.csv
+2025-06-18 23:59:18,611 - LogisticRegression - INFO - 使用SHAP进行特征解释分析...
+2025-06-18 23:59:18,623 - LogisticRegression - INFO - 初始化SHAP解释器...
+2025-06-18 23:59:18,623 - LogisticRegression - INFO - 计算 500 个样本的SHAP值...
+2025-06-18 23:59:19,806 - LogisticRegression - INFO - 
+==================== SHAP特征分析结果 ====================
+2025-06-18 23:59:19,806 - LogisticRegression - INFO - Top 10 重要特征 (基于SHAP值):
+2025-06-18 23:59:19,810 - LogisticRegression - INFO -                   Feature  Mean |SHAP|
+21   active_days_homepage     3.160247
+41  total_clicks_homepage     1.256965
+13    date_unregistration     0.947279
+58    overall_active_days     0.916694
+59       avg_daily_clicks     0.680248
+29       active_days_quiz     0.445840
+54       total_clicks_url     0.424776
+3                  gender     0.408931
+53   total_clicks_subpage     0.406416
+34        active_days_url     0.401768
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - SHAP摘要图已保存至: ../outputs/LogisticRegression\shap_results\shap_summary.png
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - SHAP条形图已保存至: ../outputs/LogisticRegression\shap_results\shap_bar.png
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - SHAP特征重要性已保存至: ../outputs/LogisticRegression\shap_results\shap_feature_importance.csv
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - 
+===== 逻辑回归模型总结 =====
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - 学业困难学生识别率 (召回率): 88.86%
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - 模型准确率: 88.69%
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - F1分数: 0.8936
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - ROC AUC: 0.9517
+2025-06-18 23:59:19,810 - LogisticRegression - INFO - 学业困难学生识别任务完成!

@@ -82,6 +82,15 @@ def evaluate_model(model, X_test, y_test, logger):
     logger.info("\n==================== 分类报告 ====================")
     logger.info(f"\n{report}")
 
+    # 保存评估结果到文件
+    metrics_df = pd.DataFrame({
+        'Metric': ['Accuracy', 'Precision', 'Recall', 'F1', 'ROC AUC'],
+        'Value': [accuracy, precision, recall, f1, roc_auc]
+    })
+    metrics_path = os.path.join('../outputs/RandomForest', 'metrics.csv')
+    metrics_df.to_csv(metrics_path, index=False)
+    logger.info(f"评估指标已保存至: {metrics_path}")
+
     return {
         'accuracy': accuracy,
         'precision': precision,
@@ -325,6 +334,8 @@ def main():
     logger.info(f"学业困难学生识别率 (召回率): {metrics['recall']:.2%}")
     logger.info(f"模型准确率: {metrics['accuracy']:.2%}")
     logger.info(f"F1分数: {metrics['f1']:.4f}")
+    if metrics['roc_auc'] is not None:
+        logger.info(f"ROC AUC: {metrics['roc_auc']:.4f}")
     logger.info("学业困难学生识别任务完成!")
 
 
