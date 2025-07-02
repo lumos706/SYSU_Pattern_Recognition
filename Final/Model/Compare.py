@@ -115,7 +115,8 @@ def compare_models():
     plt.ylabel('分数', fontsize=14)
     plt.xlabel('评估指标', fontsize=14)
     plt.ylim(0, 1.05)
-    plt.legend(title='模型', loc='best', fontsize=12)
+    plt.legend(title='模型', loc='best', fontsize=12, bbox_to_anchor=(1.01, 0.5))
+    plt.tight_layout()
     plt.grid(axis='y', linestyle='--', alpha=0.7)
 
     # 添加数据标签

@@ -1,14 +1,14 @@
-2025-06-27 02:03:03,656 - LogisticRegression - INFO - ===== 开始模型性能对比分析 =====
-2025-06-27 02:03:03,657 - LogisticRegression - INFO - 收集各模型性能指标...
-2025-06-27 02:03:03,666 - LogisticRegression - INFO - 已加载 随机森林 的性能指标
-2025-06-27 02:03:03,670 - LogisticRegression - INFO - 已加载 逻辑回归 的性能指标
-2025-06-27 02:03:03,673 - LogisticRegression - INFO - 已加载 K-Means 的性能指标
-2025-06-27 02:03:03,676 - LogisticRegression - INFO - 已加载 支持向量机 的性能指标
-2025-06-27 02:03:03,681 - LogisticRegression - INFO - 模型对比数据已保存至: ../outputs/Comparison\model_comparison.csv
-2025-06-27 02:03:03,683 - LogisticRegression - INFO - 生成综合性能对比图...
-2025-06-27 02:03:04,947 - LogisticRegression - INFO - 综合性能对比图已保存至: ../outputs/Comparison\Comparison_plots\overall_comparison.png
-2025-06-27 02:03:04,948 - LogisticRegression - INFO - 生成各指标详细对比图...
-2025-06-27 02:03:06,871 - LogisticRegression - INFO - 各指标详细对比图已保存至: ../outputs/Comparison\Comparison_plots\metrics_comparison.png
-2025-06-27 02:03:06,871 - LogisticRegression - INFO - 生成性能对比报告...
-2025-06-27 02:03:06,882 - LogisticRegression - INFO - 性能对比报告已保存至: ../outputs/Comparison\model_comparison_report.txt
-2025-06-27 02:03:06,883 - LogisticRegression - INFO - ===== 模型性能对比分析完成 =====
+2025-07-02 23:20:14,382 - LogisticRegression - INFO - ===== 开始模型性能对比分析 =====
+2025-07-02 23:20:14,382 - LogisticRegression - INFO - 收集各模型性能指标...
+2025-07-02 23:20:14,389 - LogisticRegression - INFO - 已加载 随机森林 的性能指标
+2025-07-02 23:20:14,390 - LogisticRegression - INFO - 已加载 逻辑回归 的性能指标
+2025-07-02 23:20:14,392 - LogisticRegression - INFO - 已加载 K-Means 的性能指标
+2025-07-02 23:20:14,393 - LogisticRegression - INFO - 已加载 支持向量机 的性能指标
+2025-07-02 23:20:14,398 - LogisticRegression - INFO - 模型对比数据已保存至: ../outputs/Comparison\model_comparison.csv
+2025-07-02 23:20:14,399 - LogisticRegression - INFO - 生成综合性能对比图...
+2025-07-02 23:20:15,399 - LogisticRegression - INFO - 综合性能对比图已保存至: ../outputs/Comparison\Comparison_plots\overall_comparison.png
+2025-07-02 23:20:15,400 - LogisticRegression - INFO - 生成各指标详细对比图...
+2025-07-02 23:20:17,314 - LogisticRegression - INFO - 各指标详细对比图已保存至: ../outputs/Comparison\Comparison_plots\metrics_comparison.png
+2025-07-02 23:20:17,314 - LogisticRegression - INFO - 生成性能对比报告...
+2025-07-02 23:20:17,323 - LogisticRegression - INFO - 性能对比报告已保存至: ../outputs/Comparison\model_comparison_report.txt
+2025-07-02 23:20:17,325 - LogisticRegression - INFO - ===== 模型性能对比分析完成 =====
