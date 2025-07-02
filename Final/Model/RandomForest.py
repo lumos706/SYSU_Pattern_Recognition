@@ -10,7 +10,9 @@ from sklearn.metrics import (accuracy_score, precision_score, recall_score,
 from sklearn.preprocessing import StandardScaler, LabelEncoder
 import matplotlib.pyplot as plt
 import shap
+from sklearn.model_selection import GridSearchCV
 import joblib
+import seaborn as sns
 import os
 import warnings
 
@@ -48,7 +50,7 @@ def setup_logger(log_file='../Outputs/RandomForest/random_forest.log'):
 
 
 # 评估函数
-def evaluate_model(model, X_test, y_test, logger):
+def evaluate_model(model, X_test, y_test, logger, output_dir):
     """全面评估模型性能"""
     start_time = time.time()
 
@@ -65,6 +67,18 @@ def evaluate_model(model, X_test, y_test, logger):
 
     # 混淆矩阵
     cm = confusion_matrix(y_test, y_pred)
+
+    # 绘制混淆矩阵
+    plt.figure(figsize=(8, 6))
+    sns.heatmap(cm, annot=True, fmt='d', cmap='Blues',
+                xticklabels=['正常学生', '学业困难学生'],
+                yticklabels=['正常学生', '学业困难学生'])
+    plt.title('逻辑回归 - 混淆矩阵')
+    plt.xlabel('预测标签')
+    plt.ylabel('真实标签')
+    cm_path = os.path.join(output_dir, 'confusion_matrix.png')
+    plt.savefig(cm_path, bbox_inches='tight')
+    plt.close()
 
     # 分类报告
     report = classification_report(y_test, y_pred, target_names=['正常学生', '学业困难学生'])
@@ -191,6 +205,8 @@ def analyze_with_shap(model, X_train, feature_names, logger, output_dir='../Outp
 
 # 主函数
 def main():
+    # 设置输出目录
+    output_dir = '../outputs/RandomForest'
     # 设置日志
     logger = setup_logger()
     logger.info("===== 学业困难学生识别 - 随机森林算法 (SHAP修复版) =====")
@@ -255,43 +271,50 @@ def main():
     # 将标准化后的数据转换回DataFrame以保留特征名
     X_train_scaled_df = pd.DataFrame(X_train_scaled, columns=feature_names)
 
-    # 初始化随机森林模型
-    logger.info("初始化随机森林分类器...")
-    rf_params = {
-        'n_estimators': 150,
-        'max_depth': 10,
-        'min_samples_split': 5,
-        'min_samples_leaf': 2,
-        'max_features': 'sqrt',
-        'bootstrap': True,
-        'class_weight': 'balanced',  # 处理不平衡数据
-        'random_state': 42,
-        'n_jobs': -1  # 使用所有CPU核心
+    # 定义参数网格
+    param_grid = {
+        'n_estimators': [100, 150, 200],
+        'max_depth': [8, 10, 12],
+        'min_samples_split': [2, 5],
+        'min_samples_leaf': [1, 2],
+        'max_features': ['sqrt', 'log2']
     }
-    model = RandomForestClassifier(**rf_params)
 
-    # 训练模型
-    logger.info("开始训练随机森林模型...")
-    train_start = time.time()
-    model.fit(X_train_scaled_df, y_train)
-    train_time = time.time() - train_start
-    logger.info(f"训练完成，耗时: {train_time:.2f}秒")
+    logger.info("开始GridSearchCV自动调参...")
+    rf = RandomForestClassifier(
+        class_weight='balanced',
+        bootstrap=True,
+        random_state=42,
+        n_jobs=-1
+    )
+    grid_search = GridSearchCV(
+        estimator=rf,
+        param_grid=param_grid,
+        scoring='f1',
+        cv=3,
+        n_jobs=-1,
+        verbose=1
+    )
+    grid_search.fit(X_train_scaled_df, y_train)
+    best_model = grid_search.best_estimator_
+    best_params = grid_search.best_params_
+    logger.info(f"GridSearchCV调参完成，最佳参数: {best_params}")
 
-    # 保存模型
+    # 保存最佳模型
     model_save_path = '../outputs/RandomForest/academic_risk_rf_model.pkl'
-    joblib.dump(model, model_save_path)
-    logger.info(f"模型已保存至: {model_save_path}")
+    joblib.dump(best_model, model_save_path)
+    logger.info(f"最佳模型已保存至: {model_save_path}")
 
     # 评估模型
     logger.info("评估模型性能...")
     X_test_scaled_df = pd.DataFrame(X_test_scaled, columns=feature_names)
-    metrics = evaluate_model(model, X_test_scaled_df, y_test, logger)
+    metrics = evaluate_model(best_model, X_test_scaled_df, y_test, logger, output_dir)
 
     # SHAP特征解释分析
     logger.info("使用SHAP进行特征解释分析...")
     try:
         shap_results = analyze_with_shap(
-            model,
+            best_model,
             X_train_scaled_df,
             feature_names,
             logger,
