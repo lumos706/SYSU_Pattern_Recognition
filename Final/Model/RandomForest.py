@@ -246,7 +246,13 @@ def main():
         logger.error("目标变量 'academic_risk' 不存在!")
         return
 
-    X = df.drop(columns=['academic_risk'])
+    # 去除final_result，防止信息泄露
+    drop_cols = ['academic_risk']
+    if 'final_result' in df.columns:
+        drop_cols.append('final_result')
+        logger.info("训练时已去除final_result列，防止信息泄露。")
+
+    X = df.drop(columns=drop_cols)
     y = df['academic_risk']
     feature_names = X.columns.tolist()
 
@@ -293,7 +299,7 @@ def main():
         scoring='f1',
         cv=3,
         n_jobs=-1,
-        verbose=1
+        verbose=0
     )
     grid_search.fit(X_train_scaled_df, y_train)
     best_model = grid_search.best_estimator_

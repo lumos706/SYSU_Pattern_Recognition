@@ -1,70 +1,71 @@
-2025-06-19 17:49:33,718 - KMeansClustering - INFO - ===== 学业困难学生识别 - KMeans聚类模型 =====
-2025-06-19 17:49:33,718 - KMeansClustering - INFO - 加载预处理数据...
-2025-06-19 17:49:33,842 - KMeansClustering - INFO - 数据加载成功，形状: (31482, 62)
-2025-06-19 17:49:33,842 - KMeansClustering - INFO - 准备特征和目标变量...
-2025-06-19 17:49:33,849 - KMeansClustering - INFO - 学业困难学生比例: 53.45% (16827/31482)
-2025-06-19 17:49:33,849 - KMeansClustering - INFO - 划分训练集和测试集 (80:20)...
-2025-06-19 17:49:33,869 - KMeansClustering - INFO - 训练集: 25185 样本
-2025-06-19 17:49:33,870 - KMeansClustering - INFO - 测试集: 6297 样本
-2025-06-19 17:49:33,870 - KMeansClustering - INFO - 创建预处理和建模管道...
-2025-06-19 17:49:33,870 - KMeansClustering - INFO - 开始训练KMeans聚类模型...
-2025-06-19 17:49:35,580 - KMeansClustering - INFO - 训练完成，耗时: 1.71秒
-2025-06-19 17:49:35,582 - KMeansClustering - INFO - 聚类到类别的映射: {0: 1, 1: 0}
-2025-06-19 17:49:35,588 - KMeansClustering - INFO - 模型已保存至: ../outputs/KMeans\kmeans_model.pkl
-2025-06-19 17:49:45,396 - KMeansClustering - INFO - 轮廓系数 (Silhouette Score): 0.3640
-2025-06-19 17:49:45,396 - KMeansClustering - INFO - 评估模型性能...
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - 评估完成，耗时: 0.47秒
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - 
+2025-07-03 01:48:34,760 - KMeansClustering - INFO - ===== 学业困难学生识别 - KMeans聚类模型 =====
+2025-07-03 01:48:34,760 - KMeansClustering - INFO - 加载预处理数据...
+2025-07-03 01:48:34,916 - KMeansClustering - INFO - 数据加载成功，形状: (31482, 62)
+2025-07-03 01:48:34,917 - KMeansClustering - INFO - 准备特征和目标变量...
+2025-07-03 01:48:34,917 - KMeansClustering - INFO - 训练时已去除final_result列，防止信息泄露。
+2025-07-03 01:48:34,922 - KMeansClustering - INFO - 学业困难学生比例: 53.45% (16827/31482)
+2025-07-03 01:48:34,923 - KMeansClustering - INFO - 划分训练集和测试集 (80:20)...
+2025-07-03 01:48:34,942 - KMeansClustering - INFO - 训练集: 25185 样本
+2025-07-03 01:48:34,943 - KMeansClustering - INFO - 测试集: 6297 样本
+2025-07-03 01:48:34,943 - KMeansClustering - INFO - 创建预处理和建模管道...
+2025-07-03 01:48:34,943 - KMeansClustering - INFO - 开始训练KMeans聚类模型...
+2025-07-03 01:48:35,528 - KMeansClustering - INFO - 训练完成，耗时: 0.59秒
+2025-07-03 01:48:35,535 - KMeansClustering - INFO - 聚类到类别的映射: {0: 1, 1: 0}
+2025-07-03 01:48:35,540 - KMeansClustering - INFO - 模型已保存至: ../outputs/KMeans\kmeans_model.pkl
+2025-07-03 01:48:42,836 - KMeansClustering - INFO - 轮廓系数 (Silhouette Score): 0.3703
+2025-07-03 01:48:42,836 - KMeansClustering - INFO - 评估模型性能...
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 评估完成，耗时: 0.38秒
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 
 ==================== 模型性能指标 ====================
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - 准确率 (Accuracy): 0.6876
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - 精确率 (Precision): 0.6400
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - 召回率 (Recall): 0.9498
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - F1分数 (F1-Score): 0.7647
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - ROC AUC分数: 未计算（KMeans无概率输出）
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - 
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 准确率 (Accuracy): 0.6862
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 精确率 (Precision): 0.6390
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 召回率 (Recall): 0.9492
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - F1分数 (F1-Score): 0.7638
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - ROC AUC分数: 未计算（KMeans无概率输出）
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 
 ==================== 混淆矩阵 ====================
-2025-06-19 17:49:45,869 - KMeansClustering - INFO - 
-[[1133 1798]
- [ 169 3197]]
-2025-06-19 17:49:45,870 - KMeansClustering - INFO - 
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 
+[[1126 1805]
+ [ 171 3195]]
+2025-07-03 01:48:43,218 - KMeansClustering - INFO - 
 ==================== 分类报告 ====================
-2025-06-19 17:49:45,870 - KMeansClustering - INFO - 
+2025-07-03 01:48:43,219 - KMeansClustering - INFO - 
               precision    recall  f1-score   support
 
-        正常学生       0.87      0.39      0.54      2931
+        正常学生       0.87      0.38      0.53      2931
       学业困难学生       0.64      0.95      0.76      3366
 
     accuracy                           0.69      6297
-   macro avg       0.76      0.67      0.65      6297
+   macro avg       0.75      0.67      0.65      6297
 weighted avg       0.75      0.69      0.66      6297
 
-2025-06-19 17:49:45,876 - KMeansClustering - INFO - 评估指标已保存至: ../outputs/KMeans\metrics.csv
-2025-06-19 17:49:45,876 - KMeansClustering - INFO - 进行聚类特征分析...
-2025-06-19 17:49:47,028 - KMeansClustering - INFO - 
+2025-07-03 01:48:43,221 - KMeansClustering - INFO - 评估指标已保存至: ../outputs/KMeans\metrics.csv
+2025-07-03 01:48:43,221 - KMeansClustering - INFO - 进行聚类特征分析...
+2025-07-03 01:48:44,160 - KMeansClustering - INFO - 
 ==================== 聚类分析结果 ====================
-2025-06-19 17:49:47,029 - KMeansClustering - INFO - 各聚类中学业困难学生比例:
+2025-07-03 01:48:44,161 - KMeansClustering - INFO - 各聚类中学业困难学生比例:
 Cluster
-0    0.637796
-1    0.124803
+0    0.637235
+1    0.124604
 Name: Actual_Class, dtype: float64
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - Top 10重要特征:
+2025-07-03 01:48:44,167 - KMeansClustering - INFO - Top 10重要特征:
                   Feature  Importance
-0    overall_total_clicks    1.008887
-1     overall_active_days    1.006459
-2     active_days_subpage    0.964845
-3   total_clicks_homepage    0.957714
-4        early_engagement    0.941806
-5    active_days_homepage    0.936151
-6    total_clicks_subpage    0.932751
-7   active_days_oucontent    0.883248
-8     active_days_forumng    0.835726
-9  total_clicks_oucontent    0.827175
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - 特征重要性图已保存至: ../outputs/KMeans\cluster_analysis\feature_importance.png
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - 聚类热力图已保存至: ../outputs/KMeans\cluster_analysis\cluster_heatmap.png
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - 
+0    overall_total_clicks    1.010548
+1     overall_active_days    1.007861
+2     active_days_subpage    0.966653
+3   total_clicks_homepage    0.959438
+4        early_engagement    0.942354
+5    active_days_homepage    0.936780
+6    total_clicks_subpage    0.934619
+7   active_days_oucontent    0.885902
+8     active_days_forumng    0.836567
+9  total_clicks_oucontent    0.829793
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - 特征重要性图已保存至: ../outputs/KMeans\cluster_analysis\feature_importance.png
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - 聚类热力图已保存至: ../outputs/KMeans\cluster_analysis\cluster_heatmap.png
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - 
 ===== KMeans聚类模型总结 =====
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - 学业困难学生识别率 (召回率): 94.98%
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - 模型准确率: 68.76%
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - F1分数: 0.7647
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - 轮廓系数: 0.3640
-2025-06-19 17:49:47,034 - KMeansClustering - INFO - 学业困难学生识别任务完成!
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - 学业困难学生识别率 (召回率): 94.92%
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - 模型准确率: 68.62%
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - F1分数: 0.7638
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - 轮廓系数: 0.3703
+2025-07-03 01:48:44,168 - KMeansClustering - INFO - 学业困难学生识别任务完成!
