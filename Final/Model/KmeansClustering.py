@@ -1,19 +1,20 @@
 import logging
+import os
 import time
-import pandas as pd
+import warnings
+
+import joblib
+import matplotlib.pyplot as plt
 import numpy as np
-from sklearn.model_selection import train_test_split
+import pandas as pd
+import seaborn as sns
 from sklearn.cluster import KMeans
 from sklearn.metrics import (accuracy_score, precision_score, recall_score,
-                             f1_score, roc_auc_score, confusion_matrix,
+                             f1_score, confusion_matrix,
                              classification_report, silhouette_score)
-from sklearn.preprocessing import StandardScaler
+from sklearn.model_selection import train_test_split
 from sklearn.pipeline import Pipeline
-import matplotlib.pyplot as plt
-import seaborn as sns
-import joblib
-import os
-import warnings
+from sklearn.preprocessing import StandardScaler
 
 # 忽略警告
 warnings.filterwarnings("ignore")
